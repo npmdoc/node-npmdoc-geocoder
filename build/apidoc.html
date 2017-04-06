@@ -1,0 +1,696 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/wyattdanger/geocoder"
+
+    >geocoder (v0.2.3)</a>
+</h1>
+<h4>node wrapper around google's geocoder api</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.geocoder">module geocoder</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">geocoder.</span>geonames</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">geocoder.</span>providerObj</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">geocoder.</span>providerOpts</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">geocoder.</span>yahoo</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">geocoder.</span>provider</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.geocoder.geonames">module geocoder.geonames</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.geocoder.geonames.geocode">
+            function <span class="apidocSignatureSpan">geocoder.geonames.</span>geocode
+            <span class="apidocSignatureSpan">( providerOpts, loc, cbk, opts )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.geocoder.geonames.reverseGeocode">
+            function <span class="apidocSignatureSpan">geocoder.geonames.</span>reverseGeocode
+            <span class="apidocSignatureSpan">( providerOpts, lat, lng, cbk, opts )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.geocoder.providerObj">module geocoder.providerObj</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.geocoder.providerObj.geocode">
+            function <span class="apidocSignatureSpan">geocoder.providerObj.</span>geocode
+            <span class="apidocSignatureSpan">( providerOpts, loc, cbk, opts )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.geocoder.providerObj.reverseGeocode">
+            function <span class="apidocSignatureSpan">geocoder.providerObj.</span>reverseGeocode
+            <span class="apidocSignatureSpan">( providerOpts, lat, lng, cbk, opts )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.geocoder.yahoo">module geocoder.yahoo</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.geocoder.yahoo.geocode">
+            function <span class="apidocSignatureSpan">geocoder.yahoo.</span>geocode
+            <span class="apidocSignatureSpan">( providerOpts, loc, cbk, opts )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.geocoder.yahoo.reverseGeocode">
+            function <span class="apidocSignatureSpan">geocoder.yahoo.</span>reverseGeocode
+            <span class="apidocSignatureSpan">( providerOpts, lat, lng, cbk, opts )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.geocoder" id="apidoc.module.geocoder">module geocoder</a></h1>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.geocoder.geonames" id="apidoc.module.geocoder.geonames">module geocoder.geonames</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.geocoder.geonames.geocode" id="apidoc.element.geocoder.geonames.geocode">
+        function <span class="apidocSignatureSpan">geocoder.geonames.</span>geocode
+        <span class="apidocSignatureSpan">( providerOpts, loc, cbk, opts )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">geocode = function ( providerOpts, loc, cbk, opts ) {
+
+  var options = _.extend({q: loc, maxRows: 10, username:providerOpts.username||&#x22;demo&#x22; }, opts || {});
+
+  request({
+    uri:&#x22;http://api.geonames.org/searchJSON&#x22;,
+    qs:options
+  }, function(err,resp,body) {
+    if (err) return cbk(err);
+    var result;
+    try {
+      result = JSON.parse(body);
+    } catch (err) {
+      cbk(err);
+      return;
+    }
+    cbk(null,result);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+###Example:
+
+```javascript
+var geocoder = require(&#x27;geocoder&#x27;);
+
+// Geocoding
+geocoder.<span class="apidocCodeKeywordSpan">geocode</span>(&#x22;Atlanta, GA&#x22;, function ( err, data ) {
+  // do something with data
+});
+
+// Reverse Geocoding
+geocoder.reverseGeocode( 33.7489, -84.3789, function ( err, data ) {
+  // do something with data
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.geocoder.geonames.reverseGeocode" id="apidoc.element.geocoder.geonames.reverseGeocode">
+        function <span class="apidocSignatureSpan">geocoder.geonames.</span>reverseGeocode
+        <span class="apidocSignatureSpan">( providerOpts, lat, lng, cbk, opts )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reverseGeocode = function ( providerOpts, lat, lng, cbk, opts ) {
+
+  var options = _.extend({lat:lat, lng:lng, username:providerOpts.username||&#x22;demo&#x22; }, opts || {});
+
+  request({
+    uri:&#x22;http://api.geonames.org/extendedFindNearby&#x22;,
+    qs:options
+  }, function(err,resp,body) {
+    if (err) return cbk(err);
+
+    var parser = new xml2js.Parser();
+    parser.parseString(body, function (err, result) {
+      if (err) return cbk(err);
+
+      // Transform geonames&#x27; structure into something that looks like Google&#x27;s JSON outpu
+      // https://developers.google.com/maps/documentation/geocoding/#JSON
+      var googlejson = {
+        &#x22;status&#x22;:&#x22;OK&#x22;,
+        &#x22;results&#x22;:[
+          {
+            &#x22;address_components&#x22;:[],
+            &#x22;formatted_address&#x22;:&#x22;&#x22;,
+            &#x22;geometry&#x22;:{
+              &#x22;location&#x22;:{
+                &#x22;lat&#x22;:lat,
+                &#x22;lng&#x22;:lng
+              }
+            }
+          }
+        ]
+      };
+
+      if (result.geonames.address) {
+        var a = result.geonames.address[0];
+
+        if (a.streetNumber &#x26;&#x26; typeof a.streetNumber[0]==&#x22;string&#x22;)
+          googlejson.results[0].address_components.push({
+            &#x22;long_name&#x22;:a.streetNumber[0],
+            &#x22;short_name&#x22;:a.streetNumber[0],
+            &#x22;types&#x22;:[&#x22;street_number&#x22;]
+          });
+
+        if (a.street &#x26;&#x26; typeof a.street[0]==&#x22;string&#x22;)
+          googlejson.results[0].address_components.push({
+            &#x22;long_name&#x22;:a.street[0],
+            &#x22;short_name&#x22;:a.street[0],
+            &#x22;types&#x22;:[&#x22;route&#x22;]
+          });
+
+        if (a.placename &#x26;&#x26; typeof a.placename[0]==&#x22;string&#x22;)
+          googlejson.results[0].address_components.push({
+            &#x22;long_name&#x22;:a.placename[0],
+            &#x22;short_name&#x22;:a.placename[0],
+            &#x22;types&#x22;:[&#x22;locality&#x22;, &#x22;political&#x22;]
+          });
+
+        if (a.adminName1 &#x26;&#x26; typeof a.adminName1[0]==&#x22;string&#x22;)
+          googlejson.results[0].address_components.push({
+            &#x22;long_name&#x22;:a.adminName1[0],
+            &#x22;short_name&#x22;:a.adminCode1[0],
+            &#x22;types&#x22;:[ &#x22;administrative_area_level_1&#x22;, &#x22;political&#x22; ]
+          });
+
+        if (a.adminName2 &#x26;&#x26; typeof a.adminName2[0]==&#x22;string&#x22;)
+          googlejson.results[0].address_components.push({
+            &#x22;long_name&#x22;:a.adminName2[0],
+            &#x22;short_name&#x22;:a.adminCode2[0],
+            &#x22;types&#x22;:[ &#x22;administrative_area_level_2&#x22;, &#x22;political&#x22; ]
+          });
+
+        if (a.countryCode &#x26;&#x26; typeof a.countryCode[0]==&#x22;string&#x22;)
+          googlejson.results[0].address_components.push({
+            &#x22;long_name&#x22;:a.countryCode[0]==&#x22;US&#x22;?&#x22;United States&#x22;:&#x22;&#x22;,
+            &#x22;short_name&#x22;:a.countryCode[0],
+            &#x22;types&#x22;:[ &#x22;country&#x22; ]
+          });
+
+        if (a.lat &#x26;&#x26; typeof a.lat[0]==&#x22;string&#x22;)
+          googlejson.results[0].geometry.location = {
+            &#x22;lat&#x22;:parseFloat(a.lat[0]),
+            &#x22;lng&#x22;:parseFloat(a.lng[0])
+          }
+      }
+
+      if (result.geonames.geoname) {
+        // http://www.geonames.org/export/codes.html
+        // https://developers.google.com/maps/documentation/geocoding/#Types
+        var fcode2google = {
+          &#x22;ADM1&#x22;:[ &#x22;administrative_area_level_1&#x22;, &#x22;political&#x22; ],
+          &#x22;ADM2&#x22;:[ &#x22;administrative_area_level_2&#x22;, &#x22;political&#x22; ],
+          &#x22;ADM3&#x22;:[ &#x22;administrative_area_level_3&#x22;, &#x22;political&#x22; ],
+          &#x22;ADMD&#x22;:[ &#x22;political&#x22;],
+          &#x22;PPL&#x22; :[ &#x22;locality&#x22;]
+        };
+
+        result.geonames.geoname.forEach(function(geoname) {
+
+          // Push only recognized types to results
+          if (geoname.fcode[0]==&#x22;PCLI&#x22;) {
+            googlejson.results[0].address_components.push({
+              &#x22;long_name&#x22;:geoname.name[0],
+              &#x22;short_name&#x22;:geoname.countryCode[0],
+              &#x22;types&#x22;:[ &#x22;country&#x22;, &#x22;political&#x22;]
+            });
+
+          } else if (fcode2google[geoname.fcode[0]]) {
+
+
+            googlejson.results[0].address_components.push({
+              &#x22;long_name&#x22;:geoname.toponymName[0],
+              &#x22;short_name&#x22;:geoname.name[0],
+              &#x22;types&#x22;:fcode2google[geoname.fcode[0]]
+            });
+          }
+
+        });
+      }
+
+      // Make a formatted address as well as we can
+      var shortNames = {};
+      googlejson.results[0].address_components.forEach(func ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// Geocoding
+geocoder.geocode(&#x22;Atlanta, GA&#x22;, function ( err, data ) {
+  // do something with data
+});
+
+// Reverse Geocoding
+geocoder.<span class="apidocCodeKeywordSpan">reverseGeocode</span>( 33.7489, -84.3789, function ( err, data ) {
+  // do something with data
+});
+
+// Setting sensor to true
+geocoder.reverseGeocode( 33.7489, -84.3789, function ( err, data ) {
+  // do something with data
+}, { sensor: true });
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.geocoder.providerObj" id="apidoc.module.geocoder.providerObj">module geocoder.providerObj</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.geocoder.providerObj.geocode" id="apidoc.element.geocoder.providerObj.geocode">
+        function <span class="apidocSignatureSpan">geocoder.providerObj.</span>geocode
+        <span class="apidocSignatureSpan">( providerOpts, loc, cbk, opts )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">geocode = function ( providerOpts, loc, cbk, opts ) {
+
+  var options = _.extend({sensor: false, address: loc}, opts || {});
+  var uri = &#x22;http&#x22; + ( options.key ? &#x22;s&#x22; : &#x22;&#x22; ) + &#x22;://maps.googleapis.com/maps/api/geocode/json&#x22;
+  request({
+    uri: uri,
+    qs:options
+  }, function(err,resp,body) {
+    if (err) return cbk(err);
+    var result;
+    try {
+      result = JSON.parse(body);
+    } catch (err) {
+      cbk(err);
+      return;
+    }
+    cbk(null,result);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+###Example:
+
+```javascript
+var geocoder = require(&#x27;geocoder&#x27;);
+
+// Geocoding
+geocoder.<span class="apidocCodeKeywordSpan">geocode</span>(&#x22;Atlanta, GA&#x22;, function ( err, data ) {
+  // do something with data
+});
+
+// Reverse Geocoding
+geocoder.reverseGeocode( 33.7489, -84.3789, function ( err, data ) {
+  // do something with data
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.geocoder.providerObj.reverseGeocode" id="apidoc.element.geocoder.providerObj.reverseGeocode">
+        function <span class="apidocSignatureSpan">geocoder.providerObj.</span>reverseGeocode
+        <span class="apidocSignatureSpan">( providerOpts, lat, lng, cbk, opts )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reverseGeocode = function ( providerOpts, lat, lng, cbk, opts ) {
+
+  var options = _.extend({sensor: false, latlng: lat + &#x27;,&#x27; + lng}, opts || {});
+  var uri = &#x22;http&#x22; + ( options.key ? &#x22;s&#x22; : &#x22;&#x22; ) + &#x22;://maps.googleapis.com/maps/api/geocode/json&#x22;
+
+  request({
+    uri:uri,
+    qs:options
+  }, function(err,resp,body) {
+    if (err) return cbk(err);
+    var result;
+    try {
+      result = JSON.parse(body);
+    } catch (err) {
+      cbk(err);
+      return;
+    }
+    cbk(null,result);
+  });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// Geocoding
+geocoder.geocode(&#x22;Atlanta, GA&#x22;, function ( err, data ) {
+  // do something with data
+});
+
+// Reverse Geocoding
+geocoder.<span class="apidocCodeKeywordSpan">reverseGeocode</span>( 33.7489, -84.3789, function ( err, data ) {
+  // do something with data
+});
+
+// Setting sensor to true
+geocoder.reverseGeocode( 33.7489, -84.3789, function ( err, data ) {
+  // do something with data
+}, { sensor: true });
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.geocoder.yahoo" id="apidoc.module.geocoder.yahoo">module geocoder.yahoo</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.geocoder.yahoo.geocode" id="apidoc.element.geocoder.yahoo.geocode">
+        function <span class="apidocSignatureSpan">geocoder.yahoo.</span>geocode
+        <span class="apidocSignatureSpan">( providerOpts, loc, cbk, opts )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">geocode = function ( providerOpts, loc, cbk, opts ) {
+
+  var options = _.extend({q: loc, flags: &#x22;J&#x22;, appid:providerOpts.appid||&#x22;[yourappidhere]&#x22; }, opts || {});
+
+  request({
+    uri:&#x22;http://where.yahooapis.com/geocode&#x22;,
+    qs:options
+  }, function(err,resp,body) {
+    if (err) return cbk(err);
+    var result;
+    try {
+      result = JSON.parse(body);
+    } catch (err) {
+      cbk(err);
+      return;
+    }
+    cbk(null,result);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+###Example:
+
+```javascript
+var geocoder = require(&#x27;geocoder&#x27;);
+
+// Geocoding
+geocoder.<span class="apidocCodeKeywordSpan">geocode</span>(&#x22;Atlanta, GA&#x22;, function ( err, data ) {
+  // do something with data
+});
+
+// Reverse Geocoding
+geocoder.reverseGeocode( 33.7489, -84.3789, function ( err, data ) {
+  // do something with data
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.geocoder.yahoo.reverseGeocode" id="apidoc.element.geocoder.yahoo.reverseGeocode">
+        function <span class="apidocSignatureSpan">geocoder.yahoo.</span>reverseGeocode
+        <span class="apidocSignatureSpan">( providerOpts, lat, lng, cbk, opts )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reverseGeocode = function ( providerOpts, lat, lng, cbk, opts ) {
+
+  var options = _.extend({q: lat+&#x22;, &#x22;+lng, gflags:&#x22;R&#x22;, flags: &#x22;J&#x22;, appid:providerOpts.appid||&#x22;[yourappidhere]&#x22; }, opts || {});
+
+  request({
+    uri:&#x22;http://where.yahooapis.com/geocode&#x22;,
+    qs:options
+  }, function(err,resp,body) {
+
+    // console.log(&#x22;[GEOCODER Yahoo API] uri:&#x22;, &#x22;http://where.yahooapis.com/geocode&#x22;);
+    // console.log(&#x22;[GEOCODER Yahoo API] options:&#x22;, JSON.stringify(options));
+    // console.log(&#x22;[GEOCODER Yahoo API] body:&#x22;, body);
+
+    if (err) return cbk(err);
+
+    var result;
+    try {
+      result = JSON.parse(body);
+    } catch (err) {
+      cbk(err);
+      return;
+    }
+
+    // Transform yahoo&#x27; structure into something that looks like Google&#x27;s JSON outpu
+    // https://developers.google.com/maps/documentation/geocoding/#JSON
+    var googlejson = {
+      &#x22;status&#x22;:&#x22;OK&#x22;,
+      &#x22;results&#x22;:[
+        {
+          &#x22;address_components&#x22;:[],
+          &#x22;formatted_address&#x22;:&#x22;&#x22;,
+          &#x22;geometry&#x22;:{
+            &#x22;location&#x22;:{
+              &#x22;lat&#x22;:lat,
+              &#x22;lng&#x22;:lng
+            }
+          }
+        }
+      ]
+    };
+
+    if (result.ResultSet.Error !== &#x22;0&#x22; &#x26;&#x26; result.ResultSet.Error !== 0) {
+      console.log(&#x22;[GEOCODER Yahoo API] ERROR&#x22;, result.Error, result.ErrorMessage);
+      return cbk(result.ResultSet.ErrorMessage);
+    }
+
+    var a = null;
+    // Yahoo seems to change its response format &#x22;randomly&#x22;. So, sometimes, it there is only one result,
+    // it will be in ResultSet.Result, and sometimes, in ResultSet.Results[0]
+    if (undefined !== result.ResultSet.Result) {
+      a = result.ResultSet.Result;
+    }
+    else if (result.ResultSet.Results &#x26;&#x26; result.ResultSet.Results.length) {
+      a = result.ResultSet.Results[0];
+    }
+
+    if (!a) {
+      return cbk(&#x22;Error getting results from Yahoo API&#x22;);
+    }
+
+    if (a.house)
+      googlejson.results[0].address_components.push({
+        &#x22;long_name&#x22;:a.house,
+        &#x22;short_name&#x22;:a.house,
+        &#x22;types&#x22;:[&#x22;street_number&#x22;]
+      });
+
+    if (a.street)
+      googlejson.results[0].address_components.push({
+        &#x22;long_name&#x22;:a.street,
+        &#x22;short_name&#x22;:a.street,
+        &#x22;types&#x22;:[&#x22;route&#x22;]
+      });
+
+    if (a.city)
+      googlejson.results[0].address_components.push({
+        &#x22;long_name&#x22;:a.city,
+        &#x22;short_name&#x22;:a.city,
+        &#x22;types&#x22;:[&#x22;locality&#x22;, &#x22;political&#x22;]
+      });
+
+    if (a.state)
+      googlejson.results[0].address_components.push({
+        &#x22;long_name&#x22;:a.state,
+        &#x22;short_name&#x22;:a.statecode || a.state,
+        &#x22;types&#x22;:[ &#x22;administrative_area_level_1&#x22;, &#x22;political&#x22; ]
+      });
+
+    if (a.county)
+      googlejson.results[0].address_components.push({
+        &#x22;long_name&#x22;:a.county,
+        &#x22;short_name&#x22;:a.countycode || a.county,
+        &#x22;types&#x22;:[ &#x22;administrative_area_level_2&#x22;, &#x22;political&#x22; ]
+      });
+
+    if (a.country)
+      googlejson.results[0].address_components.push({
+        &#x22;long_name&#x22;:a.country,
+        &#x22;short_name&#x22;:a.countrycode,
+        &#x22;types&#x22;:[ &#x22;country&#x22; ]
+      });
+
+    if (a.postal)
+      googlejson.results[0].address_components.push({
+        &#x22;long_name&#x22;:a.postal,
+        &#x22;short_name&#x22;:a.postal,
+        &#x22;types&#x22;:[ &#x22;postal_code&#x22; ]
+      });
+
+    if (a.latitude)
+      googlejson.results[0].geometry.location = {
+        &#x22;lat&#x22;:parseFloat(a.latitude),
+        &#x22;lng&#x22;:parseFloat(a.longitude)
+      };
+
+    // Make a formatted address as well as we can
+    var formatted = [];
+    if (a.line1) formatted.push(a.line1);
+    if (a.line2) formatted.push(a.line2);
+    if (a.line3) formatted.push(a.line3);
+    if (a.line4) formatted.push(a.line4);
+
+    googlejson.results[0].formatted_address = formatted.join(&#x22;, &#x22;);
+
+    // console.log(&#x22;[GEOCODER Yahoo API], calling callback w/&#x22;, JSON.stringify(googlejson));
+
+    cbk(null, googlejson);
+  });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// Geocoding
+geocoder.geocode(&#x22;Atlanta, GA&#x22;, function ( err, data ) {
+  // do something with data
+});
+
+// Reverse Geocoding
+geocoder.<span class="apidocCodeKeywordSpan">reverseGeocode</span>( 33.7489, -84.3789, function ( err, data ) {
+  // do something with data
+});
+
+// Setting sensor to true
+geocoder.reverseGeocode( 33.7489, -84.3789, function ( err, data ) {
+  // do something with data
+}, { sensor: true });
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
