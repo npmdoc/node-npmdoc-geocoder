@@ -1,6 +1,6 @@
 # npmdoc-geocoder
 
-#### api documentation for  [geocoder (v0.2.3)](https://github.com/wyattdanger/geocoder)  [![npm package](https://img.shields.io/npm/v/npmdoc-geocoder.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-geocoder) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-geocoder.svg)](https://travis-ci.org/npmdoc/node-npmdoc-geocoder)
+#### basic api documentation for  [geocoder (v0.2.3)](https://github.com/wyattdanger/geocoder)  [![npm package](https://img.shields.io/npm/v/npmdoc-geocoder.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-geocoder) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-geocoder.svg)](https://travis-ci.org/npmdoc/node-npmdoc-geocoder)
 
 #### node wrapper around google's geocoder api
 
@@ -66,7 +66,8 @@
         "url": "git://github.com/wyattdanger/geocoder.git"
     },
     "scripts": {},
-    "version": "0.2.3"
+    "version": "0.2.3",
+    "bin": {}
 }
 ```
 
